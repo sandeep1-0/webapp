@@ -1,0 +1,43 @@
+{% extends 'Layout.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>College Name</th>
+        <th>College Email</th>
+          <th>College Address</th>
+          <th>ACTIONS</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for row in data %}
+        <tr>
+            <td>{{ row.id }}</td>
+            <td>{{ row.clg_name }}</td>
+            <td>{{ row.clg_email }}</td>
+            <td>{{ row.clg_address }}</td>
+            <td>
+              <a href="/update?id={{row.id}}" class="btn btn-primary btn-xs">UPDATE</a>
+              <a onclick = "return deleteItem()" href="delete?id={{row.id}}" class="btn btn-warning btn-xs">DELETE</a>
+              <a href="/view?id={{row.id}}" class="btn btn-info btn-xs">INFO</a>
+          </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+
+<script>
+    function deleteItem(){
+
+        if(confirm('Are you sure to delete this item?'))
+        return true;
+        else return false;
+        }
+</script>
+
+{% endblock %}

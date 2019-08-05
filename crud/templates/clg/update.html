@@ -1,0 +1,16 @@
+{% extends 'Layout.html' %}
+{% block title %} Update College {% endblock %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<form action="" method="post" novalidate>{% csrf_token %}
+
+    {{ form | crispy }}
+
+    <input type="submit" value="update" class="btn btn-primary">
+
+</form>
+
+{% endblock %}

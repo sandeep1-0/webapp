@@ -1,0 +1,19 @@
+{% extends 'Layout.html' %}
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+
+{% if request.user.username %}
+<h3> Welcome:{{ request.user.username }}</h3>
+<h4>CITY: {{ request.session.city }} </h4>
+<h4>ADDRESS: {{request.session.address}} </h4>
+
+<h4><a href="/logout">Logout</a></h4>
+
+{% else %}
+
+<h4><a href="/logout">Login Again</a></h4>
+
+{% endif %}
+
+{% endblock %}

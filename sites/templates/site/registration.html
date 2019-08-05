@@ -1,0 +1,15 @@
+{% extends 'Layout.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<form action="" method="post" novalidate>{% csrf_token %}
+
+    {{ form | crispy }}
+
+    <input type="submit" value="Registration" class="btn btn-primary">
+
+    </form>
+
+{% endblock %}

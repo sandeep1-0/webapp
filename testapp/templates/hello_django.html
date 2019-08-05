@@ -1,0 +1,33 @@
+{% extends 'Layout.html' %}
+
+ <title>{% block title %} Django {% endblock %}</title>
+
+{% block content %}
+
+
+<h2>Hello Django...!</h2>
+
+<!--
+<h3>  {{ name }}   </h3>
+<h3>  {{ email }}  </h3>
+<h3>  {{ list }}  </h3>
+<h3>  {{ d2.country }} </h3>
+
+-->
+
+{% if name == "" %}
+<h3>Name space is empty</h3>
+{% else %}
+<h3> Name : {{ name }}</h3>
+{% endif %}
+
+{% for i in list %}
+<p> {{i}} </p>
+{% endfor %}
+
+{% for x,y in d2.items %}
+<p> {{x}} : {{y}} </p>
+{% endfor %}
+
+
+{% endblock %}

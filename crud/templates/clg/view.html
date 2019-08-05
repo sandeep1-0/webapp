@@ -1,0 +1,14 @@
+{% extends 'Layout.html' %}
+
+{% block title %} Info {% endblock %}
+
+{% block content %}
+
+{% for row in info %}
+<p>{{ row.id}}</p>
+<p>{{ row.clg_name}}</p>
+<p>{{ row.clg_email}}</p>
+<p>{{ row.clg_address}}</p>
+{% endfor %}
+
+{% endblock %}
